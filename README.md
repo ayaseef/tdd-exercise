@@ -20,8 +20,39 @@ When a hand's score is greater than 21, the hand is a **bust** and the player au
 With a partner talk through the following questions and write down answers.
 
 1.  What would be two nominal cases?
+
+    1. A King and a Jack
+    2. A 3, 5, 8 and 9
+    
 2.  What edge cases can you determine?  Name at least 3.
+
+    1. An Ace and a Jack (21)
+    2. Two Aces and a Queen (to verify that the aces are counted as 1s) (12)
+    3. A Queen a King and a two (22 or bust)
+    4. Two Kings and an Ace (21)
+    
 3.  How would you **test** these cases?
+
+    
+You can test these cases by building `describe` and `it` blocks and calling the method with the given inputs and verifying that the method returns the expected output:
+
+Example:
+
+```ruby
+describe 'blackjack_score' do
+  it 'return 21 for an Ace and a Jack' do
+    # Arrange
+    hand = [1, 'Jack']
+
+    # Act
+    score = blackjack_score([hand)
+
+    # Assert
+    expect(score).must_equal 21
+  end
+
+  # further tests...
+end
 
 When you finish talk with another pair and walk through your answers.
 
